@@ -8,7 +8,10 @@
 
 h2
 
-{ font-family: 'Acme'; }
+{
+  font-family: 'Bangers';
+  margin-bottom: 20px !important;
+  }
 
 body 
 { font-family:;'Roboto Condensed'; }
@@ -41,3 +44,5 @@ body
   margin: 10px 0px 60px;
   border: 1px solid GREY;
   }
+
+  
