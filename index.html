@@ -18,12 +18,62 @@
     <link href="bootstrap-lightbox/bootstrap-lightbox.css" rel="stylesheet">
     <link href="bootstrap-lightbox/bootstrap-lightbox.min.css" rel="stylesheet">
     
-    <link href="https://fonts.googleapis.com/css?family=Acme|Roboto+Condensed|Bangers" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme|Roboto+Condensed|Bangers|Titillium+Web" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<script>
+// Open the Modal
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+// Close the Modal
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
 
   </head>
 
   <body>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
     <!-- Navigation -->
   
@@ -57,25 +107,142 @@
 
           <div class="row">
         <div class="col-sm-8">
-          <h2 class="mt-4">Media</h2>
-          <img src="css/assets/small-banner.png">
+          <h2 class="mt-4">Videos</h2>
+          <!-- Images used to open the lightbox -->
+<div class="row-lightbox">
+  <div class="column">
+    <img src="css/assets/small-banner.png" onclick="openModal();currentSlide(1)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="css/assets/small-banner.png" onclick="openModal();currentSlide(2)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="css/assets/small-banner.png" onclick="openModal();currentSlide(3)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="css/assets/small-banner.png" onclick="openModal();currentSlide(4)" class="hover-shadow">
+  </div>
+   <div class="column">
+    <img src="css/assets/small-banner.png" onclick="openModal();currentSlide(5)" class="hover-shadow">
+  </div>
+   <div class="column">
+    <img src="css/assets/small-banner.png" onclick="openModal();currentSlide(6)" class="hover-shadow">
+  </div>
+    <div class="column">
+    <img src="css/assets/small-banner.png" onclick="openModal();currentSlide(7)" class="hover-shadow">
+  </div>
+    <div class="column">
+    <img src="css/assets/small-banner.png" onclick="openModal();currentSlide(8)" class="hover-shadow">
+  </div>
+</div>
+
+<!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <iframe height="600px" src="https://www.youtube.com/embed/J5o9jfNZKlY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width:100%"></iframe>
+    </div>
+
+    <div class="mySlides">
+      <img src="css/assets/banner.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <img src="css/assets/banner.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <img src="css/assets/banner.png" style="width:100%">
+    </div>
+
+      <div class="mySlides">
+      <img src="css/assets/banner.png" style="width:100%">
+    </div>
+
+      <div class="mySlides">
+      <img src="css/assets/banner.png" style="width:100%">
+    </div>
+
+ <div class="mySlides">
+      <img src="css/assets/banner.png" style="width:100%">
+    </div>
+
+ <div class="mySlides">
+      <img src="css/assets/banner.png" style="width:100%">
+    </div>
+
+     <div class="mySlides">
+      <img src="css/assets/ef-1.png" style="width:100%">
+    </div>
+
+     <div class="mySlides">
+      <img src="css/assets/ef-2.png" style="width:100%">
+    </div>
+
+
+    <!-- Next/previous controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+   
+  </div>
+</div>
 
         </div>
         <div class="col-sm-4">
-          <h2 class="mt-4">Upcoming Shows</h2><br>
-         <strong>The Fire</strong>- 11PM Friday, February 9th<hr>
-         <strong>The Fire</strong>- 11PM Friday, February 9th<hr>
-         <strong>The Fire</strong>- 11PM Friday, February 9th
+          <h2 class="mt-4">Upcoming Shows</h2>
+         <strong>The Fire - Philadelphia, PA</strong><br>11PM Friday, 2.9.18<hr>
+         <strong>Bourbon And Branch - Philadelphia, PA</strong><br>9PM Thursday, 2.17.18<hr>
+         <strong>Proud Marys - Atlantic City, NJ</strong><br>9PM Friday, 4.28.18
         </div>
       </div>
+       <!-- /.row -->
+
+          <div class="row">
+        <div class="col-sm-8">
+          <h2 class="mt-4">Photos</h2>
+          <!-- Images used to open the lightbox -->
+<div class="row-lightbox">
+  <div class="column">
+    <img src="css/assets/small-ef-1.png" onclick="openModal();currentSlide(9)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="css/assets/small-ef-2.png" onclick="openModal();currentSlide(10)" class="hover-shadow">
+  </div>
+
+</div>
+
+
+   
+  </div>
+
+        <div class="col-sm-4">
+          <h2 class="mt-4">Social Media</h2>
+         <a href="https://easternfunction.bandcamp.com/" target="_blank"><i style="color:#2885cd;" class="fab fa-bandcamp fa-2x"></i></a>&nbsp;&nbsp;
+         <a href="https://www.youtube.com/channel/UC-wtJuIm7FHrWGODV6rigFw" target="_blank"><i style="color:red;" class="fab fa-youtube fa-2x"></i></a>&nbsp;&nbsp;
+         <a href="https://www.facebook.com/easternfunction/" target="_blank"><i style="color:#284fcd;" class="fab fa-facebook fa-2x"></i></a>&nbsp;&nbsp;
+         <a href="https://itunes.apple.com/us/artist/eastern-function/1086372713" target="_blank"><i style="color:#e90e65;" class="fab fa-itunes-note fa-2x"></i></a>
+         &nbsp;&nbsp;
+         <a href="https://soundcloud.com/easternfunction" target="_blank"><i style="color:#f66943;" class="fab fa-soundcloud fa-2x"></i></a><br><br>
+         <iframe src="https://open.spotify.com/follow/1/?uri=spotify:artist:1SnytqW8S2XaPLkBkgT5Da&size=detail&theme=light" width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe><br><br>
+
+        </div>
+      </div>
+
+      
+
+      
       <!-- /.row -->
+
 
            <div class="row">
         <div class="col-sm-8">
           <h2 class="mt-4">Contact Us</h2>
         <p>Reach out to us and we'll get back to you within a few hours.</p>
         <p><i class="fas fa-envelope"></i>&nbsp;&nbsp;easternfunction@gmail.com<br>
-        <i class="fas fa-phone"></i>&nbsp;&nbsp;215 555 1234<br>
+        <i class="fas fa-phone"></i>&nbsp;&nbsp;609 410 5472<br>
           
         </p>
 
@@ -86,6 +253,7 @@
         
         </div>
       </div>
+
       <!-- /.row -->
 
     </div>
@@ -93,9 +261,9 @@
 
     <!-- Footer -->
     <footer class="py-5 bg-dark">
-      <div class="container">
+      
         <p class="m-0 text-center text-white">Copyright &copy; Eastern Function 2018</p>
-      </div>
+      
       <!-- /.container -->
     </footer>
 
